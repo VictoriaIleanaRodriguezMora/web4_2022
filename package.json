@@ -1,0 +1,23 @@
+{
+  "name": "web4_2022",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictoriaIleanaRodriguezMora/web4_2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictoriaIleanaRodriguezMora/web4_2022/issues"
+  },
+  "homepage": "https://github.com/VictoriaIleanaRodriguezMora/web4_2022#readme",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
