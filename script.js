@@ -11,25 +11,37 @@
 
 const express = require('express')
 const app = express();
-const hbs = require('hbs');
-app.set('view engine', 'hbs');
+const PORT = 4000
+const { engine } = require('express-handlebars'); //HANDLEBARS
 
-hbs.registerPartials(__dirname + '/views/partials');
+const server = app.listen(PORT, () => {
+    console.log(`Puerto ${server.address().port} Web 4`);
+})
+
+app.set('view engine', 'hbs');
+app.set('views', './views');
+app.engine(
+    'hbs',
+    engine({
+        extname: '.hbs',
+        defaultLayout: 'index.hbs',
+        layoutsDir: __dirname + '/views/layouts',
+        partialsDir: __dirname + '/views/partials',
+    })
+);
 
 app.get('/', function (req, res) {
-    res.render('inicio', {
+    res.json({
         titulo: "Estas en la página inicial",
         mensaje: "Aprendiendo a hacer páginas dinámicas con NodeJS",
-        enlace: "http://localhost:4000/contacto",
+        enlace: "/contacto",
     })
 })
 
 app.get('/contacto', function (req, res) {
-    res.render('contacto', {
+    res.json({
         contacto: "CONTACTO",
         msj: "victoria2013mora@gmail.com",
 
     })
 })
-app.listen(8000)
-console.log("Iniciando en puerto 3000")
